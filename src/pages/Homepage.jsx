@@ -16,6 +16,8 @@ import {
   faPhone
 } from "@fortawesome/free-solid-svg-icons";
 import Button from "../Utils/Button";
+// import general from "../assets/dataSet/general.json"
+
 export default function Homepage() {
   const icons = [faShieldAlt, faPalette, faCode];
   const icons_two = [faWalking, faComputer, faLightbulb]; // One icon per course
@@ -31,7 +33,7 @@ export default function Homepage() {
     {
       icon: "faPalette",
       title: "Multimedia & Product Design",
-      des: "Develop expertise in UX/UI design, 3D modeling,  animation, and digital media production  for creative industries.",
+      des: "Develop expertise in UX/UI design, 3D modeling,  animation, and digital media production for creative industries.",
       duration: "2 years",
       link: "/programs/long/multimedia_product_design",
     },
@@ -90,6 +92,7 @@ export default function Homepage() {
 
   return (
     <div>
+  
       <section className="w-full bg-gray-100 flex flex-col md:flex-row items-center justify-between">
         {/* Left content */}
         <div className="w-full md:w-1/2 md:px-16  text-center md:text-left space-y-6">
@@ -210,8 +213,8 @@ export default function Homepage() {
         <div className="text-center my-4">
           <h2 className="font-bold">International University Pathways</h2>
           <p className="font-semibold">
-            Our graduates receive advanced standing at prestigious universities
-            worldwide, allowing you to complete your bachelor's degree in less
+            Our graduates receive advanced standing atprestigious universities
+            worldwide, allowing youto complete your bachelor's degree in less
             time.
           </p>
         </div>
