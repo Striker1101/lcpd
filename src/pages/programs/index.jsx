@@ -150,7 +150,7 @@ export default function Programs() {
       duration: "🕒 Duration: 1-6 Months",
       learn: "🔍 Learn machine learning & smart automation",
       option: "🎓 AI career roadmap guide",
-      link: "artifical_intelligence",
+      link: "artificial_intelligence",
     },
 
     {

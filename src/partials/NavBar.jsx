@@ -13,7 +13,6 @@ export default function NavBar() {
     { to: "/programs", label: "Programs" },
     { to: "/university_pathway", label: "University Pathway" },
     { to: "/about_us", label: "About Us" },
-    { to: "/contact_us", label: "Contact Us" },
   ];
 
   return (
