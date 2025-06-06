@@ -1,54 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import axios from "axios";
+import general from "../../../Utils/general.json";
 
 export default function ShowShortCourse() {
-  const short_courses = {
-    graphic_design: {
-      title: "Graphic Design",
-      description: "Learn design principles, tools, and branding.",
-    },
-    fashion_design: {
-      title: "Fashion Design",
-      description: "Master tailoring, sketching, and styling.",
-    },
-    artificial_intelligence: {
-      title: "Introduction to Artificial Intelligence",
-      slug: "artificial_intelligence",
-      content:
-        "This course is your gateway into the world of AI where machines learn, think, and make decisions. Through engaging lectures and hands-on projects, you'll explore how AI is reshaping industries one algorithm at a time.",
-      link: "#",
-      level: "Beginner Level",
-      level_text: "No prior experience required",
-      rate: "4.6",
-      rate_text: "25,000+ Reviews",
-      duration: "Duration",
-      duration_text: "8–9 Weeks",
-      learn_one: "Learn Python: the most popular programming language for AI",
-      learn_two: "Understand algorithms, data structures, and AI models",
-      learn_three: "Build with TensorFlow and PyTorch",
-      learn_four: "Explore AI use cases in health, finance, and ethics",
-      skills: [
-        "Automation",
-        "Python",
-        "Jupyter",
-        "Data Processing",
-        "Pandas",
-        "Web Scraping",
-        "Scripting",
-        "Numpy",
-        "Programming Principles",
-      ],
-      reasons: [
-        "Learn from industry experts",
-        "Gain foundational understanding of AI tools",
-        "Develop job-relevant skills with projects",
-      ],
-      reasons_link: "#",
-    },
-  };
+  const { id } = useParams();
+  const [course, setCourse] = useState(null);
+  const url = general.backend_url;
 
-  const { slug } = useParams();
-  const course = short_courses[slug];
+  useEffect(() => {
+    if (!id) return;
+
+    async function getCourse() {
+      try {
+        const res = await axios.get(`${url}/short_course/${id}`);
+        setCourse(res.data);
+      } catch (err) {
+        console.error("Failed to fetch course", err);
+      }
+    }
+    getCourse();
+  }, [id]);
 
   if (!course)
     return (
@@ -56,6 +28,11 @@ export default function ShowShortCourse() {
         Course not found
       </p>
     );
+  console.log(JSON.parse(course.reasons));
+  // Parse skills and reasons strings into arrays
+  const skillsArray = course.skills ? JSON.parse(course.skills) : [];
+
+  const reasonsArray = course.reasons ? JSON.parse(course.reasons) : [];
 
   return (
     <section className="flex flex-col items-center">
@@ -93,10 +70,10 @@ export default function ShowShortCourse() {
           What You'll Learn
         </h2>
         <ul className="list-disc list-inside space-y-2 text-gray-800">
-          <li>{course.learn_one}</li>
-          <li>{course.learn_two}</li>
-          <li>{course.learn_three}</li>
-          <li>{course.learn_four}</li>
+          {course.learn_one && <li>{course.learn_one}</li>}
+          {course.learn_two && <li>{course.learn_two}</li>}
+          {course.learn_three && <li>{course.learn_three}</li>}
+          {course.learn_four && <li>{course.learn_four}</li>}
         </ul>
       </div>
 
@@ -104,14 +81,16 @@ export default function ShowShortCourse() {
       <div className="w-full max-w-4xl mt-12 px-4 text-center">
         <h2 className="text-lg font-bold mb-4">Skills You'll Gain</h2>
         <ul className="flex flex-wrap justify-center gap-3">
-          {course.skills.map((skill, i) => (
-            <li
-              key={i}
-              className="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm"
-            >
-              {skill}
-            </li>
-          ))}
+          {skillsArray.length > 0
+            ? skillsArray.map((skill, i) => (
+                <li
+                  key={i}
+                  className="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm"
+                >
+                  {skill}
+                </li>
+              ))
+            : "No skills listed."}
         </ul>
       </div>
 
@@ -120,9 +99,9 @@ export default function ShowShortCourse() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-xl font-bold mb-4">Why Take This Course</h2>
           <ul className="list-disc list-inside space-y-2">
-            {course.reasons.map((reason, i) => (
-              <li key={i}>{reason}</li>
-            ))}
+            {reasonsArray.length > 0
+              ? reasonsArray.map((reason, i) => <li key={i}>{reason}</li>)
+              : "No reasons listed."}
           </ul>
 
           <div className="mt-6 flex justify-between items-center flex-wrap gap-4">

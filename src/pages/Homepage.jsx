@@ -90,7 +90,6 @@ export default function Homepage() {
 
   return (
     <div>
-  
       <section className="w-full bg-gray-100 flex flex-col md:flex-row items-center justify-between">
         {/* Left content */}
         <div className="w-full md:w-1/2 md:px-16  text-center md:text-left space-y-6">
@@ -203,7 +202,7 @@ export default function Homepage() {
           })}
         </div>
         <div className="float-right">
-          <Button link={"/products/short"} text={" Click to learn more"} />
+          <Button link={"/programs"} text={" Click to learn more"} />
         </div>
       </section>
 
@@ -219,19 +218,28 @@ export default function Homepage() {
         <div className="flex flex-column gap-4 my-3">
           <div className="border-l-4 border-red-600 flex justify-content-around bg-gray-400 py-3">
             <h2>United Kingdom</h2>
-            <Button text={"Click to see University"} link={""} />
+            <Button
+              text={"Click to see University"}
+              link={"university_pathway"}
+            />
           </div>
           <div className="border-l-4 border-red-600 flex justify-content-around  bg-gray-400 py-3">
             <h2>Malaysia</h2>
-            <Button text={"Click to see University"} />
+            <Button
+              text={"Click to see University"}
+              link={"university_pathway"}
+            />
           </div>
           <div className="border-l-4 border-red-600 flex justify-content-around  bg-gray-400 py-3">
             <h2>Nigeria</h2>
-            <Button text={"Click to see University"} />
+            <Button
+              text={"Click to see University"}
+              link={"university_pathway"}
+            />
           </div>
         </div>
         <div className="flex justify-content-between">
-          <Button text={"Explore All Pathways"} link={"/university_pathways"} />
+          <Button text={"Explore All Pathways"} link={"university_pathway"} />
           <i>And lots More ...</i>
         </div>
       </section>
@@ -291,7 +299,7 @@ export default function Homepage() {
         </div>
       </section>
 
-     <ContactUs/>
+      <ContactUs />
     </div>
   );
 }
