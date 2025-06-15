@@ -18,7 +18,8 @@ export default function Programs() {
       learn: "🔐 Learn ethical hacking, firewalls, cloud security",
       option: "✅ Only WAEC/NECO or OND",
       credit: "🚀 Credit transfer to BSc in top global unis",
-      link: "network_cyber_security",
+      // link: "network_cyber_security",
+      link: "https://Gudu.lcpd.net ",
     },
     {
       img: multimedia,
@@ -27,7 +28,8 @@ export default function Programs() {
       learn: "🎥 Learn animation, design, UI/UX, video editing",
       option: "✅ Only WAEC/NECO or OND",
       credit: "🌍 Pathway to BSc degree (UK, Malaysia, Nigeria)",
-      link: "multimedia_product_design",
+      // link: "multimedia_product_design",
+      link: "https://Gudu.lcpd.net ",
     },
     {
       img: software,
@@ -36,7 +38,8 @@ export default function Programs() {
       learn: "🔧 Full-stack, mobile, and cloud development",
       option: "✅ Only WAEC/NECO or OND",
       credit: "🎓 1-year top-up to earn a BSc from partner universities",
-      link: "software_engineering",
+      // link: "software_engineering",
+      link: "https://Gudu.lcpd.net ",
     },
   ];
 

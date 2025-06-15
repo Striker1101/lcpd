@@ -28,10 +28,21 @@ export default function CourseCard({fromBackend, course, index,option, FlexedInd
         <p className="text-sm text-gray-600">{course?.credit}</p>
 
         <div className="m-2">
-          <Button
-            text="Apply Now"
-            link={`/programs/${option}/${course.id}`}
-          />
+          {course.link?.startsWith("http") ? (
+            <a
+              href={course.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="your-button-class bg-red-500 p-2 rounded text-white"
+            >
+              Apply Now
+            </a>
+          ) : (
+            <Button
+              text="Apply Now"
+              link={`/programs/${option}/${course.id || course.link}`}
+            />
+          )}
         </div>
       </div>
     </div>

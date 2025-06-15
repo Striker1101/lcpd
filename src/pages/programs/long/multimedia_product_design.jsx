@@ -11,9 +11,9 @@ export default function MultimediaProductDesign() {
     const multimedia = {
       bg: mul_bg,
       one: {
-        title: "Multimedia",
-        duration: "Duration: 2 Years | Format: 4 Semesters",
-        link: "",
+        title: "Multimedia / Product Design",
+        duration: "Duration: 2 Years | Format: 6 Semesters",
+        link: "/contact_us",
       },
       two: {
         title: "Create. Design. Innovate.",

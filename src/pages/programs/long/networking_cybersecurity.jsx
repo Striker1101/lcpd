@@ -11,9 +11,9 @@ export default function NetworkingCybersecurity() {
   const multimedia = {
     bg: cs_bg,
     one: {
-      title: "Cyber Security",
-      duration: "Duration: 2 Years | Format: 4 Semesters",
-      link: "",
+      title: "Networking & Cyber Security",
+      duration: "Duration: 2 Years | Format: 6 Semesters",
+      link: "/contact_us",
     },
     two: {
       title: "Design. Build. Defend",
@@ -50,7 +50,7 @@ export default function NetworkingCybersecurity() {
       "Access top-up pathways to bachelor's degree through out partner universities",
       "Build a Certification-ready portfolio that sets you apart in the job market",
       "learn From industry experts and collaborate with peers in project-based teams ",
-      "Prepare for Certificate like CCNA, CEH, and CompTIA Security" 
+      "Prepare for Certificate like CCNA, CEH, and CompTIA Security",
     ],
     five: {
       header_one:
@@ -60,7 +60,7 @@ export default function NetworkingCybersecurity() {
       item_one: [
         "Middlesex University London",
         "Lincoln University College Malaysia",
-        "Lincoln College of Science, Management and Technology-NSUK Nigeria", 
+        "Lincoln College of Science, Management and Technology-NSUK Nigeria",
       ],
       item_two: [
         "London South Bank University",
@@ -70,8 +70,7 @@ export default function NetworkingCybersecurity() {
     },
     six: {
       title: "Ready to Defend the Digital World?",
-      header:
-        "Take the first step toward a powerful future in tech.",
+      header: "Take the first step toward a powerful future in tech.",
       link: "",
     },
   };

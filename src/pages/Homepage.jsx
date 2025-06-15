@@ -26,21 +26,21 @@ export default function Homepage() {
       title: "Networking & Cyber Security",
       des: "Master network infrastructure, security protocols, and ethical hacking techniques to protect organizations from cyber threats.",
       duration: "2 years",
-      link: "/programs/long/network_cyber_security",
+      link: "/programs/long_course/network_cyber_security",
     },
     {
       icon: "faPalette",
       title: "Multimedia & Product Design",
       des: "Develop expertise in UX/UI design, 3D modeling,  animation, and digital media production for creative industries.",
       duration: "2 years",
-      link: "/programs/long/multimedia_product_design",
+      link: "/programs/long_course/multimedia_product_design",
     },
     {
       icon: "faCode",
       title: "Software Design",
       des: "Become a skilled software developer—learn to create websites, phone apps, and online systems like the pros!",
       duration: "2 years",
-      link: "/programs/long/software_design",
+      link: "/programs/long_course/software_engineering",
     },
   ];
 
@@ -115,9 +115,9 @@ export default function Homepage() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <button className="bg-red-600 text-white px-6 py-2 rounded-md shadow hover:bg-red-700 transition duration-300">
+            <a href="/contact_us " className="bg-red-600 text-white px-6 py-2 rounded-md shadow hover:bg-red-700 transition duration-300">
               Apply Now
-            </button>
+            </a>
             <a
               href="/programs"
               className="bg-white text-red-600 border border-red-600 px-6 py-2 rounded-md hover:bg-red-50 transition duration-300"
@@ -291,7 +291,7 @@ export default function Homepage() {
 
           {/* CTA Button */}
           <a
-            href="/programs"
+            href="/contact_us"
             className="bg-white text-red-600 font-semibold px-6 py-2 rounded-md shadow hover:bg-red-100 transition duration-300"
           >
             Apply Now

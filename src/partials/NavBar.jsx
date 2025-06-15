@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo_full from "../assets/images/logo_full.png";
-
+import general from "../Utils/general.json"
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -20,9 +20,9 @@ export default function NavBar() {
       {/* Top Contact Bar */}
       <div className="hidden md:flex justify-between items-center px-6 py-2 bg-gray-100 text-sm text-gray-700">
         <div className="space-y-0.5">
-          <p>07066920710</p>
-          <p>info@lcpd.net</p>
-          <p>Plot 678 Axis Plaza Opp MRS/NNPC filling station by Gudu</p>
+          <p>{ general.number_one}</p>
+          <p>{ general.global_email}</p>
+          <p>{general.address}</p>
         </div>
         <div className="flex space-x-4 text-lg">
           <i className="bi bi-twitter hover:text-blue-500 cursor-pointer"></i>

@@ -13,6 +13,7 @@ import ShortIndex from "./dashboard/short_course";
 import DashboardLayout from "./component/DashboardLayout";
 import ShortCreate from "./dashboard/short_course/create";
 import ShortEdit from "./dashboard/short_course/edit";
+import Contact from "./pages/Contact";
 // import { HelmetProvider } from "react-helmet-async";
 
 export default function RoutePath() {
@@ -54,6 +55,7 @@ export default function RoutePath() {
 
         <Route path="university_pathway" element={<UniversityPathways />} />
         <Route path="about_us" element={<About />} />
+        <Route path="contact_us" element={<Contact />} />
         <Route path="*" element={<ComingSoon />} />
       </Routes>
       {/* </HelmetProvider> */}

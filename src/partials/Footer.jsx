@@ -3,7 +3,7 @@ import one from "../assets/images/1.jpg";
 import two from "../assets/images/2.jpg";
 import three from "../assets/images/3.jpg";
 import four from "../assets/images/4.jpg";
-
+import general from "../Utils/general.json"
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300">
@@ -19,16 +19,16 @@ export default function Footer() {
               affordability—find out why people all over the world choose LCPD.
             </p>
             <div className="flex space-x-4 mt-4">
-              <a href="#" className="hover:text-white">
+              <a href={general.facebook } className="hover:text-white">
                 <i className="bi bi-facebook text-2xl"></i>
               </a>
-              <a href="#" className="hover:text-white">
+              <a href={general.instagram } className="hover:text-white">
                 <i className="bi bi-instagram text-2xl"></i>
               </a>
-              <a href="#" className="hover:text-white">
+              <a href={general.whatsapp} className="hover:text-white">
                 <i className="bi bi-whatsapp text-2xl"></i>
               </a>
-              <a href="#" className="hover:text-white">
+              <a href={general.whatsapp} className="hover:text-white">
                 <i className="bi bi-twitter text-2xl"></i>
               </a>
             </div>

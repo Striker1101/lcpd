@@ -1,4 +1,12 @@
 {
   "site_name": "LCPD",
-  "backend_url": "http://localhost:3005"
+  "backend_url": "https://admin.lcpd-abuja.com",
+  "number_one": "07066920710",
+  "number_two": "09048088823",
+  "global_email": "info@lcpd-abuja.com",
+  "address": "Plot 678 Axis Plaza Opp MRS/NNPC filling station by Gudu",
+  "facebook": "",
+  "instagram": "",
+  "twitter": "",
+  "whatsapp": ""
 }

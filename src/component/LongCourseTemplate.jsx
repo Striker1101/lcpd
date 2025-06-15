@@ -11,7 +11,7 @@ export default function LongCourseTemplate({ course }) {
         style={{ backgroundImage: `url(${course.bg})` }}
       >
         <h2 className="text-3xl sm:text-4xl font-bold underline mb-2 text-white drop-shadow">
-          Advanced Diploma in Multimedia / {course.one.title}
+          Advanced Diploma in {course.one.title}
         </h2>
         <p className="text-lg mb-4 text-white drop-shadow">
           {course.one.duration}

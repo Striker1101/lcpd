@@ -13,7 +13,7 @@ export default function SoftwareEngineering() {
     one: {
       title: "Software Engineering",
       duration: "Duration: 2 Years | Format: 6 Semesters",
-      link: "",
+      link: "/contact_us",
     },
     two: {
       title: "Build the Future. One Line of Code at a Time",
