@@ -3,7 +3,7 @@ import one from "../assets/images/1.jpg";
 import two from "../assets/images/2.jpg";
 import three from "../assets/images/3.jpg";
 import four from "../assets/images/4.jpg";
-import general from "../Utils/general.json"
+import general from "../Utils/general.json";
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300">
@@ -19,17 +19,49 @@ export default function Footer() {
               affordability—find out why people all over the world choose LCPD.
             </p>
             <div className="flex space-x-4 mt-4">
-              <a href={general.facebook } className="hover:text-white">
-                <i className="bi bi-facebook text-2xl"></i>
+              <a
+                href={general.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="bi bi-twitter hover:text-blue-500 cursor-pointer"></i>
               </a>
-              <a href={general.instagram } className="hover:text-white">
-                <i className="bi bi-instagram text-2xl"></i>
+              <a
+                href={general.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="bi bi-facebook hover:text-blue-600 cursor-pointer"></i>
               </a>
-              <a href={general.whatsapp} className="hover:text-white">
-                <i className="bi bi-whatsapp text-2xl"></i>
+              <a
+                href={general.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="bi bi-instagram hover:text-pink-500 cursor-pointer"></i>
               </a>
-              <a href={general.whatsapp} className="hover:text-white">
-                <i className="bi bi-twitter text-2xl"></i>
+              <a
+                href={general.tictok}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="bi bi-tiktok hover:text-blue-700 cursor-pointer"></i>
+              </a>
+
+              <a
+                href={general.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="bi bi-youtube hover:text-blue-700 cursor-pointer"></i>
+              </a>
+
+              <a
+                href={general.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="bi bi-whatsapp hover:text-blue-700 cursor-pointer"></i>
               </a>
             </div>
           </div>

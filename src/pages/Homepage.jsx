@@ -14,7 +14,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Button from "../Utils/Button";
 import ContactUs from "../component/ContactUs";
-// import general from "../assets/dataSet/general.json"
+import caroOne from "../assets/images/caro/1.png";
+import caroTwo from "../assets/images/caro/2.png";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
 
 export default function Homepage() {
   const icons = [faShieldAlt, faPalette, faCode];
@@ -88,24 +91,26 @@ export default function Homepage() {
     },
   ];
 
+  const caro = [caroOne, caroTwo];
+
   return (
     <div>
-      <section className="w-full bg-gray-100 flex flex-col md:flex-row items-center justify-between">
+      <section className="flex flex-col items-center justify-between w-full bg-gray-100 md:flex-row">
         {/* Left content */}
-        <div className="w-full md:w-1/2 md:px-16  text-center md:text-left space-y-6">
-          <div className="flex w-full text-center items-center justify-center md:justify-start gap-2 text-red-600 font-semibold">
-            <i className="fas fa-bolt text-xl"></i>
+        <div className="w-full space-y-6 text-center md:w-1/2 md:px-16 md:text-left">
+          <div className="flex items-center justify-center w-full gap-2 font-semibold text-center text-red-600 md:justify-start">
+            <i className="text-xl fas fa-bolt"></i>
             <span>Welcome to LCPD Gudu Center</span>
           </div>
 
           <div>
-            <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 leading-tight">
+            <h1 className="text-3xl font-bold leading-tight text-gray-800 sm:text-4xl">
               Shape Your Future at <br />
               <span className="text-red-600">LCPD School</span>
             </h1>
           </div>
 
-          <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
+          <p className="text-base leading-relaxed text-gray-600 sm:text-lg">
             Advance your career with our industry-leading diploma programs and
             international university pathways.
             <br />
@@ -114,13 +119,16 @@ export default function Homepage() {
             </span>
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <a href="/contact_us " className="bg-red-600 text-white px-6 py-2 rounded-md shadow hover:bg-red-700 transition duration-300">
+          <div className="flex flex-col justify-center gap-4 sm:flex-row md:justify-start">
+            <a
+              href="/contact_us "
+              className="px-6 py-2 text-white transition duration-300 bg-red-600 rounded-md shadow hover:bg-red-700"
+            >
               Apply Now
             </a>
             <a
               href="/programs"
-              className="bg-white text-red-600 border border-red-600 px-6 py-2 rounded-md hover:bg-red-50 transition duration-300"
+              className="px-6 py-2 text-red-600 transition duration-300 bg-white border border-red-600 rounded-md hover:bg-red-50"
             >
               Explore Programs
             </a>
@@ -128,45 +136,102 @@ export default function Homepage() {
         </div>
 
         {/* Right image - hidden on small screens */}
-        <div className="w-full md:w-1/2 mt-8 md:mt-0 hidden md:block">
-          <img
-            src={header}
-            alt="LCPD Banner"
-            className="w-full h-auto rounded-lg shadow"
-          />
+        <div className="hidden w-full mt-8 md:w-1/2 md:mt-0 md:block">
+          <Swiper
+            modules={[Navigation, Autoplay]}
+            navigation
+            loop
+            autoplay={{
+              delay: 3000, // time in milliseconds between slides
+              disableOnInteraction: false,
+            }}
+            spaceBetween={20}
+            className="overflow-hidden rounded-xl"
+          >
+            {caro.map((image, idx) => (
+              <SwiperSlide key={idx}>
+                <img
+                  src={image}
+                  alt={`carousel-${idx}`}
+                  className="object-cover w-full h-auto"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </section>
+
+      <section className="flex items-center justify-center gap-4 px-4 py-12 text-center bg-white md:px-16 flex-column">
+        <div>
+          <h1 className="font-bold">
+            Join Our Super Fun Summer Coding Adventure!
+          </h1>
+          <p>
+            Build your own video games and animations! Learn coding basics with
+            Scratch, Python, and more! Create cool projects to show off to
+            friends and family!
+          </p>
+          <p>
+            Fun, hands-on lessons with friendly instructors! Make new friends
+            who love tech as much as you do! No experience needed – just bring
+            your imagination!
+          </p>
+        </div>
+
+        <div className="flex items-center justify-between w-2/3 align-middle">
+          <div className="flex w-full align-top">
+            <h2 className="font-bold">Duration</h2>
+            <div>
+              <p>August 9th - Sept. 6th, 2025</p>
+              <p>Monday - Friday</p>
+              <p>Morning Session from 9 AM - 12 PM</p>
+              <p>Afternoon Session from 1PM - 4PM</p>
+            </div>
+          </div>
+          <div>
+            <h2 className="font-bold">For Kids ages 8-14</h2>
+            <h2 className="font-bold">*Limited spots available.</h2>
+          </div>
+        </div>
+        <div className="w-2/3">
+          <Button
+            className="float-right "
+            text={"Apply Now"}
+            link={"/contact_us"}
+          ></Button>
         </div>
       </section>
 
       {/* Advanced Programs Section */}
-      <section className="py-12 px-4 md:px-16 flex flex-column gap-4 justify-center items-center bg-white text-center">
+      <section className="flex items-center justify-center gap-4 px-4 py-12 text-center bg-white md:px-16 flex-column">
         <div className="max-w-2xl">
-          <h3 className="text-2xl font-bold mb-2">Advanced Diploma Programs</h3>
+          <h3 className="mb-2 text-2xl font-bold">Advanced Diploma Programs</h3>
           <p className="font-semibold text-gray-700">
             Our industry-aligned programs prepare you for the most in-demand
             careers in technology an design.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-16 py-8">
+        <div className="grid grid-cols-1 gap-6 px-4 py-8 sm:grid-cols-2 lg:grid-cols-3 md:px-16">
           {long_course.map((item, index) => (
             <div
               key={index}
-              className="bg-white shadow-md rounded-xl p-6 border-t-4 border-red-600 hover:shadow-lg transition duration-300"
+              className="p-6 transition duration-300 bg-white border-t-4 border-red-600 shadow-md rounded-xl hover:shadow-lg"
             >
-              <div className="text-red-600 text-3xl mb-4">
+              <div className="mb-4 text-3xl text-red-600">
                 <FontAwesomeIcon icon={icons[index]} />
               </div>
-              <div className="text-xl font-bold text-gray-800 mb-2">
+              <div className="mb-2 text-xl font-bold text-gray-800">
                 {item.title}
               </div>
-              <p className="text-gray-600 text-sm mb-4">{item.des}</p>
+              <p className="mb-4 text-sm text-gray-600">{item.des}</p>
               <div className="flex items-center justify-between">
                 <span className="text-sm font-semibold text-gray-700">
                   {item.duration}
                 </span>
                 <a
                   href={item.link}
-                  className="text-sm bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 transition"
+                  className="px-3 py-1 text-sm text-white transition bg-red-600 rounded hover:bg-red-700"
                 >
                   Learn More
                 </a>
@@ -176,9 +241,9 @@ export default function Homepage() {
         </div>
       </section>
 
-      <section className="py-12 px-4 md:px-16 flex flex-column gap-4 justify-center items-center bg-gray-100 text-center">
+      <section className="flex items-center justify-center gap-4 px-4 py-12 text-center bg-gray-100 md:px-16 flex-column">
         <div className="max-w-2xl">
-          <h3 className="text-2xl font-bold mb-2">
+          <h3 className="mb-2 text-2xl font-bold">
             Boost Your Career in 8–12 Weeks with LCPD’s Short Courses
           </h3>
           <p className="font-semibold text-gray-700">
@@ -186,15 +251,15 @@ export default function Homepage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-16 py-8">
+        <div className="grid grid-cols-1 gap-6 px-4 py-8 sm:grid-cols-2 lg:grid-cols-3 md:px-16">
           {short_course.map((item, index) => {
             return (
               <div
                 key={index}
-                className="bg-white relative shadow-md rounded-xl p-6 border-b-4 border-red-600 hover:shadow-lg transition duration-300"
+                className="relative p-6 transition duration-300 bg-white border-b-4 border-red-600 shadow-md rounded-xl hover:shadow-lg"
               >
                 <img src={item.img} alt={item.text} />
-                <p className="text-white font-bold absolute top-10 pl-5">
+                <p className="absolute pl-5 font-bold text-white top-10">
                   {item.text}
                 </p>
               </div>
@@ -207,7 +272,7 @@ export default function Homepage() {
       </section>
 
       <section className="container my-3">
-        <div className="text-center my-4">
+        <div className="my-4 text-center">
           <h2 className="font-bold">International University Pathways</h2>
           <p className="font-semibold">
             Our graduates receive advanced standing atprestigious universities
@@ -215,22 +280,22 @@ export default function Homepage() {
             time.
           </p>
         </div>
-        <div className="flex flex-column gap-4 my-3">
-          <div className="border-l-4 border-red-600 flex justify-content-around bg-gray-400 py-3">
+        <div className="flex gap-4 my-3 flex-column">
+          <div className="flex py-3 bg-gray-400 border-l-4 border-red-600 justify-content-around">
             <h2>United Kingdom</h2>
             <Button
               text={"Click to see University"}
               link={"university_pathway"}
             />
           </div>
-          <div className="border-l-4 border-red-600 flex justify-content-around  bg-gray-400 py-3">
+          <div className="flex py-3 bg-gray-400 border-l-4 border-red-600 justify-content-around">
             <h2>Malaysia</h2>
             <Button
               text={"Click to see University"}
               link={"university_pathway"}
             />
           </div>
-          <div className="border-l-4 border-red-600 flex justify-content-around  bg-gray-400 py-3">
+          <div className="flex py-3 bg-gray-400 border-l-4 border-red-600 justify-content-around">
             <h2>Nigeria</h2>
             <Button
               text={"Click to see University"}
@@ -244,29 +309,29 @@ export default function Homepage() {
         </div>
       </section>
 
-      <section className="py-12 px-4 md:px-16 flex flex-column gap-4 justify-center items-center bg-white text-center">
+      <section className="flex items-center justify-center gap-4 px-4 py-12 text-center bg-white md:px-16 flex-column">
         <div className="max-w-2xl">
-          <h3 className="text-2xl font-bold mb-2">Advanced Diploma Programs</h3>
+          <h3 className="mb-2 text-2xl font-bold">Advanced Diploma Programs</h3>
           <p className="font-semibold text-gray-700">
             Our industry-aligned programs prepare you for the most in-demand
             careers in technology an design.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-16 py-10 bg-gray-400 ">
+        <div className="grid grid-cols-1 gap-8 px-4 py-10 bg-gray-400 sm:grid-cols-2 lg:grid-cols-3 md:px-16 ">
           {about.map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300 p-6 border-t-4 border-red-600"
+              className="p-6 transition duration-300 bg-white border-t-4 border-red-600 shadow-md rounded-xl hover:shadow-lg"
             >
-              <div className="text-red-600 text-4xl mb-4">
+              <div className="mb-4 text-4xl text-red-600">
                 <FontAwesomeIcon icon={icons_two[index]} />
               </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-3">
+              <h3 className="mb-3 text-xl font-bold text-gray-800">
                 {item.title}
               </h3>
-              <p className="text-gray-600 text-sm mb-4">{item.desc}</p>
-              <ul className="list-disc list-inside text-gray-700 space-y-1 text-sm">
+              <p className="mb-4 text-sm text-gray-600">{item.desc}</p>
+              <ul className="space-y-1 text-sm text-gray-700 list-disc list-inside">
                 {item?.list?.map((listItem, idx) => (
                   <li key={idx}>{listItem}</li>
                 ))}
@@ -276,14 +341,14 @@ export default function Homepage() {
         </div>
       </section>
 
-      <section className="bg-red-600 text-white py-10 px-4 md:px-16">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <section className="px-4 py-10 text-white bg-red-600 md:px-16">
+        <div className="flex flex-col items-center justify-between gap-6 mx-auto max-w-7xl md:flex-row">
           {/* Text Content */}
           <div className="text-center md:text-left">
-            <h2 className="text-2xl md:text-3xl font-bold mb-2">
+            <h2 className="mb-2 text-2xl font-bold md:text-3xl">
               Ready to Start Your Journey?
             </h2>
-            <p className="text-white text-base md:text-lg font-medium">
+            <p className="text-base font-medium text-white md:text-lg">
               Join the <span className="font-semibold">LCPD Advantage</span> —
               Applications are now open!
             </p>
@@ -292,7 +357,7 @@ export default function Homepage() {
           {/* CTA Button */}
           <a
             href="/contact_us"
-            className="bg-white text-red-600 font-semibold px-6 py-2 rounded-md shadow hover:bg-red-100 transition duration-300"
+            className="px-6 py-2 font-semibold text-red-600 transition duration-300 bg-white rounded-md shadow hover:bg-red-100"
           >
             Apply Now
           </a>

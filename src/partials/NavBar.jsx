@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo_full from "../assets/images/logo_full.png";
-import general from "../Utils/general.json"
+import general from "../Utils/general.json";
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -20,15 +20,31 @@ export default function NavBar() {
       {/* Top Contact Bar */}
       <div className="hidden md:flex justify-between items-center px-6 py-2 bg-gray-100 text-sm text-gray-700">
         <div className="space-y-0.5">
-          <p>{ general.number_one}</p>
-          <p>{ general.global_email}</p>
+          <p>{general.number_one}</p>
+          <p>{general.global_email}</p>
           <p>{general.address}</p>
         </div>
         <div className="flex space-x-4 text-lg">
-          <i className="bi bi-twitter hover:text-blue-500 cursor-pointer"></i>
-          <i className="bi bi-facebook hover:text-blue-600 cursor-pointer"></i>
-          <i className="bi bi-instagram hover:text-pink-500 cursor-pointer"></i>
-          <i className="bi bi-linkedin hover:text-blue-700 cursor-pointer"></i>
+          <a href={general.twitter} target="_blank" rel="noopener noreferrer">
+            <i className="bi bi-twitter hover:text-blue-500 cursor-pointer"></i>
+          </a>
+          <a href={general.facebook} target="_blank" rel="noopener noreferrer">
+            <i className="bi bi-facebook hover:text-blue-600 cursor-pointer"></i>
+          </a>
+          <a href={general.instagram} target="_blank" rel="noopener noreferrer">
+            <i className="bi bi-instagram hover:text-pink-500 cursor-pointer"></i>
+          </a>
+          <a href={general.tictok} target="_blank" rel="noopener noreferrer">
+            <i className="bi bi-tiktok hover:text-blue-700 cursor-pointer"></i>
+          </a>
+
+          <a href={general.youtube} target="_blank" rel="noopener noreferrer">
+            <i className="bi bi-youtube hover:text-blue-700 cursor-pointer"></i>
+          </a>
+
+          <a href={general.whatsapp} target="_blank" rel="noopener noreferrer">
+            <i className="bi bi-whatsapp hover:text-blue-700 cursor-pointer"></i>
+          </a>
         </div>
       </div>
 
