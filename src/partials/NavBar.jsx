@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import logo_full from "../assets/images/logo_full.png";
+import logo_full from "../assets/images/logo_full.jpeg";
 import general from "../Utils/general.json";
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,43 +16,67 @@ export default function NavBar() {
   ];
 
   return (
-    <header className="bg-white shadow sticky top-0 z-50">
+    <header className="sticky top-0 z-50 bg-white shadow">
       {/* Top Contact Bar */}
-      <div className="hidden md:flex justify-between items-center px-6 py-2 bg-gray-100 text-sm text-gray-700">
+      <div className="items-center justify-between hidden px-6 py-2 text-sm text-gray-700 bg-gray-100 md:flex">
         <div className="space-y-0.5">
           <p>{general.number_one}</p>
           <p>{general.global_email}</p>
           <p>{general.address}</p>
         </div>
         <div className="flex space-x-4 text-lg">
-          <a href={general.twitter} target="_blank" rel="noopener noreferrer">
-            <i className="bi bi-twitter hover:text-blue-500 cursor-pointer"></i>
-          </a>
-          <a href={general.facebook} target="_blank" rel="noopener noreferrer">
-            <i className="bi bi-facebook hover:text-blue-600 cursor-pointer"></i>
-          </a>
-          <a href={general.instagram} target="_blank" rel="noopener noreferrer">
-            <i className="bi bi-instagram hover:text-pink-500 cursor-pointer"></i>
-          </a>
-          <a href={general.tictok} target="_blank" rel="noopener noreferrer">
-            <i className="bi bi-tiktok hover:text-blue-700 cursor-pointer"></i>
-          </a>
+          <NavLink
+            to={general.twitter}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="cursor-pointer bi bi-twitter hover:text-blue-500"></i>
+          </NavLink>
+          <NavLink
+            to={general.facebook}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="cursor-pointer bi bi-facebook hover:text-blue-600"></i>
+          </NavLink>
+          <NavLink
+            to={general.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="cursor-pointer bi bi-instagram hover:text-pink-500"></i>
+          </NavLink>
+          <NavLink
+            to={general.tictok}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="cursor-pointer bi bi-tiktok hover:text-blue-700"></i>
+          </NavLink>
 
-          <a href={general.youtube} target="_blank" rel="noopener noreferrer">
-            <i className="bi bi-youtube hover:text-blue-700 cursor-pointer"></i>
-          </a>
+          <NavLink
+            to={general.youtube}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="cursor-pointer bi bi-youtube hover:text-blue-700"></i>
+          </NavLink>
 
-          <a href={general.whatsapp} target="_blank" rel="noopener noreferrer">
-            <i className="bi bi-whatsapp hover:text-blue-700 cursor-pointer"></i>
-          </a>
+          <NavLink
+            to={general.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="cursor-pointer bi bi-whatsapp hover:text-blue-700"></i>
+          </NavLink>
         </div>
       </div>
 
       {/* Main Nav */}
       <nav className="px-4 py-3 md:px-6">
-        <div className="flex justify-between items-center">
+        <div className="flex items-center justify-between">
           <NavLink to="/" className="flex items-center">
-            <img src={logo_full} alt="LCPD Logo" className="h-10 w-auto" />
+            <img src={logo_full} alt="LCPD Logo" className="w-auto h-10" />
           </NavLink>
 
           {/* Toggle Button for Mobile */}
@@ -86,7 +110,7 @@ export default function NavBar() {
           </button>
 
           {/* Desktop Nav */}
-          <ul className="hidden md:flex space-x-6 text-gray-800 font-medium">
+          <ul className="hidden space-x-6 font-medium text-gray-800 md:flex">
             {menu.map(({ to, label }) => (
               <li key={to}>
                 <NavLink
@@ -104,7 +128,7 @@ export default function NavBar() {
 
         {/* Mobile Nav Links */}
         {isOpen && (
-          <ul className="md:hidden mt-4 flex flex-col space-y-3 text-gray-700 font-medium">
+          <ul className="flex flex-col mt-4 space-y-3 font-medium text-gray-700 md:hidden">
             {menu.map(({ to, label }) => (
               <li key={to}>
                 <NavLink

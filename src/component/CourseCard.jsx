@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Button from "../Utils/Button";
 import general from "../Utils/general.json";
 import ContactUs from "./ContactUs";
+import { NavLink } from "react-router-dom";
 
 export default function CourseCard({
   fromBackend,
@@ -32,7 +33,7 @@ export default function CourseCard({
         <img
           src={fromBackend ? `${url}${course.img}` : course.img}
           alt={fromBackend ? course?.card_title : course?.title}
-          className="w-full h-40 object-cover rounded mb-4"
+          className="object-cover w-full h-40 mb-4 rounded"
         />
 
         <div className={`mb-4 ${isFlexed ? "flex-1 space-y-1" : ""}`}>
@@ -47,14 +48,14 @@ export default function CourseCard({
             {option == "short_course" ? (
               <Button text="Apply Now" handleCLick={handleClick} />
             ) : course.link?.startsWith("http") ? (
-              <a
-                href={course.link}
+              <NavLink
+                to={course.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="your-button-class bg-red-500 p-2 rounded text-white"
+                className="p-2 text-white bg-red-500 rounded your-button-class"
               >
                 Apply Now
-              </a>
+              </NavLink>
             ) : (
               <Button text="Apply Now" />
             )}
@@ -63,15 +64,15 @@ export default function CourseCard({
       </div>
 
       {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg p-6 w-11/12 max-w-md relative">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="relative w-11/12 max-w-md p-6 bg-white rounded-lg">
             <button
               onClick={() => setShowModal(false)}
-              className="absolute top-2 right-2 text-red-600 text-lg font-bold"
+              className="absolute text-lg font-bold text-red-600 top-2 right-2"
             >
               &times;
             </button>
-            <h2 className="text-xl font-semibold mb-4">
+            <h2 className="mb-4 text-xl font-semibold">
               Short Course Application
             </h2>
             <ContactUs showInfo={false} />

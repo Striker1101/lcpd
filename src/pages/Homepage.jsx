@@ -18,6 +18,7 @@ import caroOne from "../assets/images/caro/1.png";
 import caroTwo from "../assets/images/caro/2.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
+import { NavLink } from "react-router-dom";
 
 export default function Homepage() {
   const icons = [faShieldAlt, faPalette, faCode];
@@ -120,18 +121,22 @@ export default function Homepage() {
           </p>
 
           <div className="flex flex-col justify-center gap-4 sm:flex-row md:justify-start">
-            <a
-              href="/contact_us "
-              className="px-6 py-2 text-white transition duration-300 bg-red-600 rounded-md shadow hover:bg-red-700"
+            <NavLink
+              className={
+                "px-6 py-2 text-white transition duration-300 bg-red-600 rounded-md shadow hover:bg-red-700"
+              }
+              to={"/contact_us"}
             >
+              {" "}
               Apply Now
-            </a>
-            <a
-              href="/programs"
+            </NavLink>
+
+            <NavLink
+              to={"/programs"}
               className="px-6 py-2 text-red-600 transition duration-300 bg-white border border-red-600 rounded-md hover:bg-red-50"
             >
               Explore Programs
-            </a>
+            </NavLink>
           </div>
         </div>
 
@@ -229,12 +234,12 @@ export default function Homepage() {
                 <span className="text-sm font-semibold text-gray-700">
                   {item.duration}
                 </span>
-                <a
-                  href={item.link}
+                <NavLink
+                  to={item.link}
                   className="px-3 py-1 text-sm text-white transition bg-red-600 rounded hover:bg-red-700"
                 >
                   Learn More
-                </a>
+                </NavLink>
               </div>
             </div>
           ))}
@@ -353,14 +358,13 @@ export default function Homepage() {
               Applications are now open!
             </p>
           </div>
-
-          {/* CTA Button */}
-          <a
-            href="/contact_us"
+          {/* CTA Button */}\
+          <NavLink
+            to={"/contact_us"}
             className="px-6 py-2 font-semibold text-red-600 transition duration-300 bg-white rounded-md shadow hover:bg-red-100"
           >
             Apply Now
-          </a>
+          </NavLink>
         </div>
       </section>
 
